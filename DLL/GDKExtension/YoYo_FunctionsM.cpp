@@ -858,7 +858,9 @@ void F_XboxOneGamerTagForUser(RValue& Result, CInstance* selfinst, CInstance* ot
 
 		if (user->XboxUserIdInt == id)
 		{
-			YYCreateString(&Result, user->ModernGamertag);
+			//CacheGrab Change: ModernGamertag fails to return anything
+			//YYCreateString(&Result, user->ModernGamertag);
+			YYCreateString(&Result, user->DisplayName);
 			return;
 		}
 	}
